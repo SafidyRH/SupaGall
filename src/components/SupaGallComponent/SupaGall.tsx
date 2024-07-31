@@ -108,7 +108,7 @@ export default function SupaGall() {
           <ImageCard
             key={image.id}
             imagePath={image.name}
-            fileName={image.name.split('/').pop() || ''}
+            fileName={(image.name.split('/').pop() || '').split('-').pop().replace(/\.[^/.]+$/, "") || ''}
             onDelete={() => deleteImage(image.name)}
           />
         ))}
